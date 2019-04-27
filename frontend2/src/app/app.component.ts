@@ -9,7 +9,7 @@ import { BaladeService } from './balade.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  balades: Balade[];
+  balades: Balade[] = [];
   error = '';
   success = '';
 
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.getBalades();
   }
 
-  getBalades(): void {
+  getBalades = (): void => {
     this.baladeService.getAll().subscribe(
       (res: Balade[]) => {
         this.balades = res;
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  addBalade(f) {
+  addBalade = (f) => {
     this.resetErrors();
 
     this.baladeService.store(this.balade)

@@ -11,7 +11,7 @@ import { Balade } from './balade';
 })
 export class BaladeService {
   baseUrl = './htdocs/api';
-balades: Balade[];
+  balades: Balade[] = [];
 
 constructor(private http: HttpClient) { }
 
@@ -27,6 +27,7 @@ constructor(private http: HttpClient) { }
   store(balade: Balade): Observable<Balade[]> {
     return this.http.post(`${this.baseUrl}/store.php`, { data: balade })
       .pipe(map((res) => {
+        this.balades = this.balades || [];
         this.balades.push(res['data']);
         return this.balades;
       }),
