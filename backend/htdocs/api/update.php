@@ -10,7 +10,7 @@ if(isset($postdata) && !empty($postdata))
   $request = json_decode($postdata);
 	
   // Validate.
-  if ((int)$request->data->ID_BALADE < 1 || trim($request->data->NOM_BALADE) == '' || trim($request->data->DATE_DEPART) == '' || trim($request->data->LIEU_RDV) == '' {
+  if ((int)$request->data->ID_BALADE < 1 || trim($request->data->NOM_BALADE) == '' || trim($request->data->DATE_DEPART) == '' || trim($request->data->LIEU_RDV) == '') {
     return http_response_code(400);
   }
     
@@ -32,8 +32,3 @@ if(isset($postdata) && !empty($postdata))
     return http_response_code(422);
   }  
 }
-
-'NOM_BALADE' 
-'DATE_DEPART' 
-'LIEU_RDV' 
-'ID_BALADE'

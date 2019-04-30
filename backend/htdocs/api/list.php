@@ -19,7 +19,7 @@ if($result = mysqli_query($con,$sql))
     $cr++;
   }
     
-  echo json_encode(['data'=>$BALADES]);
+  echo json_encode(['data'=>$BALADE]);
 }
 else
 {
