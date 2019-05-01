@@ -11,7 +11,6 @@
                  [(ngModel)]="balades[i].NOM_BALADE"
                  class="form-control"
                  required
-                 pattern="^[a-zA-Z]+$"
                  #NOM_BALADE="ngModel"
                  [ngClass]="{ 'is-invalid': NOM_BALADE.touched && NOM_BALADE.invalid }">
         </div>
@@ -58,8 +57,7 @@
             name="NOM_BALADE"
             [(ngModel)]="balade.NOM_BALADE"
             #baladeNOM_BALADE="ngModel"
-            required
-            pattern="^[a-zA-Z]+$">
+            required>
       <span class="help-block danger" *ngIf="baladeNOM_BALADE.errors?.required && baladeNOM_BALADE.touched">
         L'intitulé de la balade est demandé.
       </span>
@@ -76,12 +74,12 @@
             [(ngModel)]="balade.DATE_DEPART"
             #baladeDATE_DEPART="ngModel"
             required
-            pattern="^[a-zA-Z]+$">
+            pattern="\d{2}/\d{2}/\d{4}">
       <span class="help-block danger" *ngIf="baladeDATE_DEPART.errors?.required && baladeDATE_DEPART.touched">
-        La DATE de DEPART est demandée.
+        La DATE de DEPART est demandée au format 00/00/0000.
       </span>
       <span class="help-block danger" *ngIf="baladeDATE_DEPART.errors?.pattern && baladeDATE_DEPART.touched">
-        Date de départ can only contain the letters a-z or A-Z.
+        La DATE de DEPART est demandée au format 00/00/0000.
       </span>
     </div>
 
@@ -92,8 +90,7 @@
             name="LIEU_RDV"
             [(ngModel)]="balade.LIEU_RDV"
             #baladeLIEU_RDV="ngModel"
-            required
-            pattern="^[a-zA-Z]+$">
+            required>
       <span class="help-block danger" *ngIf="baladeLIEU_RDV.errors?.required && baladeLIEU_RDV.touched">
         Lieu de RDV est demandé.
       </span>

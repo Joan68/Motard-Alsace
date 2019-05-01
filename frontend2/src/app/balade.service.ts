@@ -52,12 +52,12 @@ constructor(private http: HttpClient) { }
 
   delete(id: number): Observable<Balade[]> {
     const params = new HttpParams()
-      .set('id', id.toString());
+      .set('ID_BALADE', id.toString());
 
     return this.http.delete(`${this.baseUrl}/delete.php`, { params: params })
       .pipe(map(res => {
         const filteredBalades = this.balades.filter((balade) => {
-          return +balade['id'] !== +id;
+          return +balade['ID_BALADE'] !== +id;
         });
         return this.balades = filteredBalades;
       }),
