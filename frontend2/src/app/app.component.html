@@ -1,52 +1,3 @@
-<div *ngIf="error" class="alert alert-danger">{{error}}</div>
-<div *ngIf="success" class="alert alert-success">{{success}}</div>
-
-<div id="theList">
-    <h2>The list</h2>
-
-    <div class="list-group">
-      <div *ngFor="let item of balades;let i = index;" class="list-group-item row">
-        <div class="col-4" style="float:left">
-          <input type="text"
-                 [(ngModel)]="balades[i].NOM_BALADE"
-                 class="form-control"
-                 required
-                 #NOM_BALADE="ngModel"
-                 [ngClass]="{ 'is-invalid': NOM_BALADE.touched && NOM_BALADE.invalid }">
-        </div>
-        <div class="col-4" style="float:left">
-          <input type="text"
-                 [(ngModel)]="balades[i].DATE_DEPART"
-                 class="form-control"
-                 required
-                 #DATE_DEPART="ngModel"
-                 [ngClass]="{ 'is-invalid': DATE_DEPART.touched && DATE_DEPART.invalid }">
-        </div>
-        <div class="col-4" style="float:left">
-          <input type="text"
-                 [(ngModel)]="balades[i].LIEU_RDV"
-                 class="form-control"
-                 required
-                 #LIEU_RDV="ngModel"
-                 [ngClass]="{ 'is-invalid': LIEU_RDV.touched && LIEU_RDV.invalid }">
-        </div>
-        <div class="col-4" style="float:left">
-          <input type="button"
-                 value="Update"
-                 class="btn btn-success btn-sm"
-                 [disabled]="NOM_BALADE.invalid || DATE_DEPART.invalid || LIEU_RDV.invalid"
-                 (click)="updateBalade(NOM_BALADE, DATE_DEPART, LIEU_RDV, item.ID_BALADE)">
-          &nbsp;
-          <input type="button"
-                 value="Delete"
-                 class="btn btn-danger btn-sm"
-                 (click)="deleteBalade(item.ID_BALADE)">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
 <div id="theForm">
   <h2>The form</h2>
   <form #f="ngForm" name="theForm" (submit)="addBalade(f)">
@@ -105,3 +56,52 @@
   </form>
 </div>
 
+
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+<div *ngIf="success" class="alert alert-success">{{success}}</div>
+
+<div id="theList">
+    <h2>The list</h2>
+
+    <div class="list-group">
+      <div *ngFor="let item of balades;let i = index;" class="list-group-item row">
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].NOM_BALADE"
+                 class="form-control"
+                 required
+                 #NOM_BALADE="ngModel"
+                 [ngClass]="{ 'is-invalid': NOM_BALADE.touched && NOM_BALADE.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].DATE_DEPART"
+                 class="form-control"
+                 required
+                 #DATE_DEPART="ngModel"
+                 [ngClass]="{ 'is-invalid': DATE_DEPART.touched && DATE_DEPART.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].LIEU_RDV"
+                 class="form-control"
+                 required
+                 #LIEU_RDV="ngModel"
+                 [ngClass]="{ 'is-invalid': LIEU_RDV.touched && LIEU_RDV.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="button"
+                 value="Update"
+                 class="btn btn-success btn-sm"
+                 [disabled]="NOM_BALADE.invalid || DATE_DEPART.invalid || LIEU_RDV.invalid"
+                 (click)="updateBalade(NOM_BALADE, DATE_DEPART, LIEU_RDV, item.ID_BALADE)">
+          &nbsp;
+          <input type="button"
+                 value="Delete"
+                 class="btn btn-danger btn-sm"
+                 (click)="deleteBalade(item.ID_BALADE)">
+
+        </div>
+      </div>
+    </div>
+  </div>
