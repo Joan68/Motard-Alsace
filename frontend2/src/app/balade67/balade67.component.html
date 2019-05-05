@@ -1,0 +1,107 @@
+<div id="theForm">
+  <h2>The form</h2>
+  <form #f="ngForm" name="theForm" (submit)="addBalade(f)">
+    <div class="form-group">
+      <label>Intitulé de la balade</label>
+      <input type="text"
+            class="form-control"
+            name="NOM_BALADE"
+            [(ngModel)]="balade.NOM_BALADE"
+            #baladeNOM_BALADE="ngModel"
+            required>
+      <span class="help-block danger" *ngIf="baladeNOM_BALADE.errors?.required && baladeNOM_BALADE.touched">
+        L'intitulé de la balade est demandé.
+      </span>
+      <span class="help-block danger" *ngIf="baladeNOM_BALADE.errors?.pattern && baladeNOM_BALADE.touched">
+        Balade name can only contain the letters a-z or A-Z.
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Date de départ</label>
+      <input type="text"
+            class="form-control"
+            name="DATE_DEPART"
+            [(ngModel)]="balade.DATE_DEPART"
+            #baladeDATE_DEPART="ngModel"
+            required
+            pattern="\d{2}/\d{2}/\d{4}">
+      <span class="help-block danger" *ngIf="baladeDATE_DEPART.errors?.required && baladeDATE_DEPART.touched">
+        La DATE de DEPART est demandée au format 00/00/0000.
+      </span>
+      <span class="help-block danger" *ngIf="baladeDATE_DEPART.errors?.pattern && baladeDATE_DEPART.touched">
+        La DATE de DEPART est demandée au format 00/00/0000.
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Lieu de RDV</label>
+      <input type="text"
+            class="form-control"
+            name="LIEU_RDV"
+            [(ngModel)]="balade.LIEU_RDV"
+            #baladeLIEU_RDV="ngModel"
+            required>
+      <span class="help-block danger" *ngIf="baladeLIEU_RDV.errors?.required && baladeLIEU_RDV.touched">
+        Lieu de RDV est demandé.
+      </span>
+      <span class="help-block danger" *ngIf="baladeLIEU_RDV.errors?.pattern && baladeLIEU_RDV.touched">
+        Lieu de RDV can only contain the letters a-z or A-Z.
+      </span>
+    </div>
+
+    <button
+        class="btn btn-primary btn-sm"
+        [disabled]="f.invalid">Add</button>
+  </form>
+</div>
+
+
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+<div *ngIf="success" class="alert alert-success">{{success}}</div>
+
+<div id="theList">
+    <h2>The list</h2>
+
+    <div class="list-group">
+      <div *ngFor="let item of balades;let i = index;" class="list-group-item row">
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].NOM_BALADE"
+                 class="form-control"
+                 required
+                 #NOM_BALADE="ngModel"
+                 [ngClass]="{ 'is-invalid': NOM_BALADE.touched && NOM_BALADE.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].DATE_DEPART"
+                 class="form-control"
+                 required
+                 #DATE_DEPART="ngModel"
+                 [ngClass]="{ 'is-invalid': DATE_DEPART.touched && DATE_DEPART.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="text"
+                 [(ngModel)]="balades[i].LIEU_RDV"
+                 class="form-control"
+                 required
+                 #LIEU_RDV="ngModel"
+                 [ngClass]="{ 'is-invalid': LIEU_RDV.touched && LIEU_RDV.invalid }">
+        </div>
+        <div class="col-4" style="float:left">
+          <input type="button"
+                 value="Update"
+                 class="btn btn-success btn-sm"
+                 [disabled]="NOM_BALADE.invalid || DATE_DEPART.invalid || LIEU_RDV.invalid"
+                 (click)="updateBalade(NOM_BALADE, DATE_DEPART, LIEU_RDV, item.ID_BALADE)">
+          &nbsp;
+          <input type="button"
+                 value="Delete"
+                 class="btn btn-danger btn-sm"
+                 (click)="deleteBalade(item.ID_BALADE)">
+
+        </div>
+      </div>
+    </div>
+  </div>

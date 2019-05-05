@@ -6,18 +6,24 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { Balade67Component } from './balade67/balade67.component';
+import { Balade68Component } from './balade68/balade68.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    Balade67Component,
+    Balade68Component
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent,NavbarComponent]
+  bootstrap: [AppComponent,NavbarComponent,Balade67Component,Balade68Component]
 })
 export class AppModule { }
