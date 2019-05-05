@@ -9,13 +9,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Balade67Component } from './balade67/balade67.component';
 import { Balade68Component } from './balade68/balade68.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     Balade67Component,
-    Balade68Component
+    Balade68Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
