@@ -1,3 +1,8 @@
 .list-group {
     box-sizing: content-box;
 }
+
+main {
+    text-align: center;
+    position: relative;
+}

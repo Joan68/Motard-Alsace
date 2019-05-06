@@ -11,6 +11,8 @@ import { Balade68Component } from './balade68/balade68.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +25,10 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent,NavbarComponent,Balade67Component,Balade68Component]
+  bootstrap: [AppComponent,NavbarComponent]
 })
 export class AppModule { }

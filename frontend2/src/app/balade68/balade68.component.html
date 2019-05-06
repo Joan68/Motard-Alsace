@@ -5,41 +5,21 @@
 
 <div class="list-group">
 <div *ngFor="let item of balades;let i = index;" class="list-group-item row mb-4">
-<div class="card">
-  <div class="card-body">
-    <div class="card-title">
-        <div class="w-100" style="float:left">
-          <div><p>Intitulé de la balade :</p></div>
-          <input type="text"
-                 [(ngModel)]="balades[i].NOM_BALADE"
-                 class="form-control"
-                 required
-                 #NOM_BALADE="ngModel"
-                 [ngClass]="{ 'is-invalid': NOM_BALADE.touched && NOM_BALADE.invalid }">
-        </div>
-      </div>
+<div class="card border-dark">
+  <div class="card-header">
+    <div class="w-100" style="float:left">
+        <p> {{ balades[i].NOM_BALADE }} </p>
+    </div>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
       <div class="w-100" style="float:left">
-        <div><p>Date de départ :</p></div>
-        <input type="text"
-               [(ngModel)]="balades[i].DATE_DEPART"
-               class="form-control"
-               required
-               #DATE_DEPART="ngModel"
-               [ngClass]="{ 'is-invalid': DATE_DEPART.touched && DATE_DEPART.invalid }">
+        <div><p>Date de départ : {{ balades[i].DATE_DEPART }} </p></div>
       </div>
     </li>
     <li class="list-group-item">
       <div class="w-100" style="float:left">
-        <div><p>Lieu de RDV :</p></div>
-        <input type="text"
-               [(ngModel)]="balades[i].LIEU_RDV"
-               class="form-control"
-               required
-               #LIEU_RDV="ngModel"
-               [ngClass]="{ 'is-invalid': LIEU_RDV.touched && LIEU_RDV.invalid }">
+        <div><p>Lieu de RDV : {{ balades[i].LIEU_RDV }} </p></div>
       </div>
     </li>
   </ul>

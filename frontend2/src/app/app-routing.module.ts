@@ -8,9 +8,9 @@ import { HomeComponent } from './home/home.component'
 import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
-  { path: 'balade68', component:Balade68Component },
-  { path: 'balade67', component:Balade67Component },
-  { path: 'home', component:HomeComponent}
+  { path: 'balade68', component:Balade68Component, data: { animation: 'isLeft' } },
+  { path: 'balade67', component:Balade67Component, data: { animation: 'isRight' } },
+  { path: '', component:HomeComponent }
 ]
 
 @NgModule({
