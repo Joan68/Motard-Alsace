@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddBaladeComponent } from './add-balade/add-balade.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     Balade67Component,
     Balade68Component,
-    HomeComponent
+    HomeComponent,
+    AddBaladeComponent
   ],
   imports: [
     BrowserModule,

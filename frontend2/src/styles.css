@@ -6,3 +6,12 @@ main {
     text-align: center;
     position: relative;
 }
+
+html, body, header {
+    height:100%;
+}
+
+html, body,header,h1 {
+    margin: 0;
+    padding: 0;
+}

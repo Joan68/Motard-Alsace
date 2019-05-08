@@ -1,0 +1,78 @@
+h1,h2,h3,h4 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.9vw;
+    padding-bottom: 1.25rem;
+}
+
+p {
+    font-size: 2vw;
+}
+p.p1 {
+    font-size: 2vw;
+    margin-top: 1.5rem;
+}
+@media (max-width: 479px) {
+    h1 {
+        font-size:6vw;
+        padding-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 479px) {
+    p {
+        font-size:3vw;
+    }
+}
+@media (max-width: 479px) {
+    p.p1 {
+        font-size:3vw;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 2500px) {
+    h1 {
+        font-size:2vw;
+        padding-bottom: 0.4rem;
+    }
+}
+
+@media (min-width: 2500px) {
+    p {
+        font-size:1vw;
+    }
+}
+@media (min-width: 2500px) {
+    p.p1 {
+        font-size:1vw;
+        margin-top: 1rem;
+    }
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-img:hover {
+        -webkit-filter: blur(15px);
+        -moz-filter: all .25s ease;
+        -o-filter: all .25s ease;
+        -ms-filter: all .25s ease;
+        filter: blur(15px);
+}
