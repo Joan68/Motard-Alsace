@@ -9,10 +9,10 @@ import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { AddBaladeComponent } from './add-balade/add-balade.component';
 
 const routes: Routes = [
-  { path: 'balade68', component:Balade68Component, data: { animation: 'isLeft' } },
-  { path: 'balade67', component:Balade67Component, data: { animation: 'isRight' } },
-  { path: '', component:HomeComponent ,},
-  { path: 'add-balade', component:AddBaladeComponent, data: { animation: 'isRight' } },
+  { path: 'balade68', component:Balade68Component },
+  { path: 'balade67', component:Balade67Component },
+  { path: '', component:HomeComponent },
+  { path: 'add-balade', component:AddBaladeComponent, /*data: { animation: 'home' } */},
 ]
 
 @NgModule({

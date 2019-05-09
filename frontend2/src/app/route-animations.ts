@@ -11,7 +11,7 @@ import {
 
   export const fader =
   trigger('routeAnimations', [
-    transition('* <=> *', [
+    transition('home <=> *', [
       // Set a default  style for enter and leave
       query(':enter, :leave', [
         style({
