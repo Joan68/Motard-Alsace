@@ -11,13 +11,32 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script> 
-<link rel="stylesheet" href="styles.9a7930c9c9822e8e3000.css"></head>
+<link rel="stylesheet" href="styles.238c77742d2f16029832.css"></head>
 <body>
   <app-navbar></app-navbar>
       <app-root></app-root>
-  <!-- <script src="js/aos.js"></script> -->
   <script>
       AOS.init();
   </script>
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.ab1a1945ec10f7e575a4.js"></script><script type="text/javascript" src="scripts.4ef78eeb1a61219275a4.js"></script><script type="text/javascript" src="main.052f57970229740dacbc.js"></script></body>
+  <script>
+/*Scroll to top when arrow up clicked BEGIN*/
+$(window).scroll(function() {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').fadeIn();
+    } else {
+        $('#back2Top').fadeOut();
+    }
+});
+$(document).ready(function() {
+    $("#back2Top").click(function(event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+});
+ /*Scroll to top when arrow up clicked END*/
+  </script>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.ab1a1945ec10f7e575a4.js"></script><script type="text/javascript" src="scripts.4ef78eeb1a61219275a4.js"></script><script type="text/javascript" src="main.b47cca41bba5820394f0.js"></script></body>
 </html>

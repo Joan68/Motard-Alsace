@@ -1,3 +1,27 @@
+html,body {
+    background-color: #E7E6F7;
+}
+
+/* WEB site color code :
+17212B noir
+E7E6F7 light-grey
+828F91 grey
+516372 blue-grey
+FFF94C yellow
+*/
+
+.bg-blue-grey {
+    background-color: #516372;
+}
+
+.bg-DARK {
+    background-color: #17212B;
+}
+
+.bg-yellow {
+    background-color: #FFF94C;
+}
+
 .list-group {
     box-sizing: content-box;
 }
@@ -17,8 +41,8 @@ html, body,header,h1 {
 }
 
 #back2Top {
-    width: 2vw;
-    line-height: 2.5vw;
+    width: 3vw;
+    line-height: 4vw;
     overflow: hidden;
     z-index: 999;
     display: none;
@@ -33,7 +57,7 @@ html, body,header,h1 {
     right: 1vw;
     color: #555;
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
     text-decoration: none;
 }
 #back2Top:hover {
