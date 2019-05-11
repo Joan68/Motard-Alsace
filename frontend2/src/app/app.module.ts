@@ -32,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LoginComponent,AddBaladeComponent],
   bootstrap: [AppComponent,NavbarComponent]
 })
 export class AppModule { }
