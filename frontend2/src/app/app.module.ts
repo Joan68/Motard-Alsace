@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddBaladeComponent } from './add-balade/add-balade.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddBaladeComponent } from './add-balade/add-balade.component';
     Balade67Component,
     Balade68Component,
     HomeComponent,
-    AddBaladeComponent
+    AddBaladeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

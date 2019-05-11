@@ -30,7 +30,9 @@
             "scripts": [
               "js/jquery-3.3.1.min.js",
               "js/bootstrap.min.js",
-              "js/aos.js"
+              "js/aos.js",
+              "js/particles.js"
+
             ],
             "es5BrowserSupport": true
           },

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Balade } from 'src/app/balade';
 import { BaladeService } from 'src/app/balade.service';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: 'app-add-balade',
