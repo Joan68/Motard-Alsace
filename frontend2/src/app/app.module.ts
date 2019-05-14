@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddBaladeComponent } from './add-balade/add-balade.component';
 import { LoginComponent } from './login/login.component';
 
+import { DataService } from './data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { LoginComponent } from './login/login.component';
     Balade68Component,
     HomeComponent,
     AddBaladeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [LoginComponent,AddBaladeComponent],
+  providers: [LoginComponent,AddBaladeComponent, DataService],
   bootstrap: [AppComponent,NavbarComponent]
 })
 export class AppModule { }

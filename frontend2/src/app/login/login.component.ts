@@ -1,21 +1,33 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { DataService } from "../data.service";
 
 declare var FB: any;
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  // templateUrl: './login.component.html',
+  template:`
+  {{ message }}
+  <button class="float-left" type="button" class="btn" (click)="submitLogin();" >Login with facebook</button>
+  <div class="float-right ml-4 mt-2" id="status"></div>`,
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  requiredIf: boolean;
+  message: boolean;
+  // @Output() MessageEvent = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private data: DataService) { }
+
+  // sendMessage() {
+  //   this.MessageEvent.emit(this.message);
+  //   return
+  // }
 
   public name: any;
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
 
   submitLogin(){
@@ -30,12 +42,12 @@ export class LoginComponent implements OnInit {
             //login success code here
             //redirect to home page
             this.testAPI();
-            this.requiredIf=true;
+            this.data.changeMessage(true);
            }
            else
            {
            console.log('User login failed');
-           this.requiredIf=false;
+           this.data.changeMessage(false);
          }
       });
 
